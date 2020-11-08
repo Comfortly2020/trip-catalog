@@ -35,7 +35,6 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         file: ./Dockerfile_with_maven_build
-        repository: davidunilj/comfortly-trip-data
         push: true
         tags: comfortly2020/trip-catalog:${{ steps.time.outputs.time }}
       
