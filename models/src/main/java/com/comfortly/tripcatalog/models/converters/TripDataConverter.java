@@ -11,6 +11,7 @@ public class TripDataConverter {
 
         TripData dto = new TripData();
         dto.setId(entity.getId());
+        dto.setUserId(entity.getUserId());
         dto.setStartLocationLat(entity.getStartLocationLat());
         dto.setStartLocationLng(entity.getStartLocationLng());
         dto.setEndLocationLat(entity.getEndLocationLat());
@@ -26,6 +27,7 @@ public class TripDataConverter {
     public static TripDataEntity toEntity(TripData dto) {
 
         TripDataEntity entity = new TripDataEntity();
+        entity.setUserId(dto.getUserId());
         entity.setStartLocationLat(dto.getStartLocationLat());
         entity.setStartLocationLng(dto.getStartLocationLng());
         entity.setEndLocationLat(dto.getEndLocationLat());

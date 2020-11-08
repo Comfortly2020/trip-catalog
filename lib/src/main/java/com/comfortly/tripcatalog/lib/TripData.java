@@ -5,6 +5,7 @@ import java.util.List;
 
 public class TripData {
     private Integer id;
+    private String userId;
     private Double startLocationLat;
     private Double startLocationLng;
     private Double endLocationLat;
@@ -19,6 +20,14 @@ public class TripData {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public Double getStartLocationLat() {

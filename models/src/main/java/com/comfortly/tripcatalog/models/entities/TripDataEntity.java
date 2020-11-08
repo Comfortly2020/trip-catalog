@@ -17,6 +17,9 @@ public class TripDataEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "user_id")
+    private String userId;
+
     @Column(name = "startLocation_lat")
     private Double startLocationLat;
 
@@ -35,7 +38,7 @@ public class TripDataEntity {
     @Column(name = "end_time")
     private Instant endTime;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "trip_id")
     private List<LocationDataEntity> locations;
 
@@ -45,6 +48,14 @@ public class TripDataEntity {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public Double getStartLocationLat() {

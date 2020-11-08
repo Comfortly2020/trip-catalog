@@ -8,7 +8,6 @@ import com.kumuluz.ee.rest.utils.JPAUtils;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.ws.rs.NotFoundException;
@@ -43,6 +42,15 @@ public class TripDataBean {
                 .build();
 
         return JPAUtils.queryEntities(emTrip, TripDataEntity.class, queryParameters).stream()
+                .map(TripDataConverter::toDto).collect(Collectors.toList());
+    }
+
+    public List<TripData> getTripDataByUser(String userId) {
+
+        TypedQuery<TripDataEntity> query = emTrip.createQuery("SELECT t FROM TripDataEntity t WHERE t.userId = :user", TripDataEntity.class);
+        query.setParameter("user", userId);
+
+        return query.getResultList().stream()
                 .map(TripDataConverter::toDto).collect(Collectors.toList());
     }
 

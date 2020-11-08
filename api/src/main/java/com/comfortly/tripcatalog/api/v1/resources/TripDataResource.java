@@ -2,14 +2,7 @@ package com.comfortly.tripcatalog.api.v1.resources;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -35,9 +28,12 @@ public class TripDataResource {
     protected UriInfo uriInfo;
 
     @GET
-    public Response getTripData() {
+    public Response getTripData(@HeaderParam("UserId") String userId) {
 
-        List<TripData> tripData = tripDataBean.getTripDataFilter(uriInfo);
+        if (userId == null) {
+            return Response.status(Response.Status.BAD_REQUEST.getStatusCode(), "Missing UserId header").build();
+        }
+        List<TripData> tripData = tripDataBean.getTripDataByUser(userId);
 
         return Response.status(Response.Status.OK).entity(tripData).build();
     }
@@ -56,7 +52,13 @@ public class TripDataResource {
     }
 
     @POST
-    public Response createTripData(TripData tripData) {
+    public Response createTripData(@HeaderParam("UserId") String userId, TripData tripData) {
+
+        if (userId == null) {
+            return Response.status(Response.Status.BAD_REQUEST.getStatusCode(), "Missing UserId header").build();
+        } else {
+            tripData.setUserId(userId);
+        }
 
         if ((tripData.getStartLocationLat() == null || tripData.getStartLocationLng() == null || tripData.getStartTime() == null)) {
             return Response.status(Response.Status.BAD_REQUEST).build();
