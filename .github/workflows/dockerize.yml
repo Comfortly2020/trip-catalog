@@ -36,5 +36,5 @@ jobs:
       with:
         file: ./Dockerfile_with_maven_build
         push: true
-        tags: prporso2021/trip-catalog:${{ steps.time.outputs.time }}
+        tags: comfortly2020/trip-catalog:${{ steps.time.outputs.time }}
       
