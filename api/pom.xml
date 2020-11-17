@@ -22,6 +22,11 @@
         </dependency>
 
         <dependency>
+            <artifactId>kumuluzee-config-consul</artifactId>
+            <groupId>com.kumuluz.ee.config</groupId>
+        </dependency>
+
+        <dependency>
             <groupId>com.comfortly</groupId>
             <artifactId>trip-catalog-services</artifactId>
         </dependency>
