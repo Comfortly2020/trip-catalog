@@ -13,12 +13,12 @@ import javax.ws.rs.core.UriInfo;
 import java.util.logging.Logger;
 
 @ApplicationScoped
-@Path("/info")
+@Path("/demo")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-public class InfoDataResource {
+public class DemoDataResource {
 
-    private Logger log = Logger.getLogger(InfoDataResource.class.getName());
+    private Logger log = Logger.getLogger(DemoDataResource.class.getName());
 
     @Context
     protected UriInfo uriInfo;
@@ -27,6 +27,7 @@ public class InfoDataResource {
     private RestProperties restProperties;
 
     @GET
+    @Path("info")
     public Response getInfoData() {
 
         InfoData data = InfoData.getInfoData();
