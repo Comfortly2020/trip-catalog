@@ -1,7 +1,5 @@
 package com.comfortly.tripcatalog.lib.info;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -17,27 +15,21 @@ public class InfoData {
         data.setMikrostoritve(Arrays.asList("http://35.189.96.118:8080/v1/trips"));
         data.setGithub(Arrays.asList("https://github.com/Comfortly2020/trip-catalog"));
         data.setTravis(Collections.emptyList());
-        data.setDockerHub(Arrays.asList("https://hub.docker.com/repository/docker/davidunilj/comfortly-trip-data"));
+        data.setDockerhub(Arrays.asList("https://hub.docker.com/repository/docker/davidunilj/comfortly-trip-data"));
         return data;
     }
 
-    @JsonProperty("clani")
     private List<String> clani;
 
-    @JsonProperty("opis_projekts")
     private String opisProjekta;
 
-    @JsonProperty("mikrostoritve")
     private List<String> mikrostoritve;
 
-    @JsonProperty("github")
     private List<String> github;
 
-    @JsonProperty("travis")
     private List<String> travis;
 
-    @JsonProperty("dockerhub")
-    private List<String> dockerHub;
+    private List<String> dockerhub;
 
     public List<String> getClani() {
         return clani;
@@ -47,7 +39,7 @@ public class InfoData {
         this.clani = clani;
     }
 
-    public String getOpisProjekta() {
+    public String getOpis_projekta() {
         return opisProjekta;
     }
 
@@ -79,11 +71,11 @@ public class InfoData {
         this.travis = travis;
     }
 
-    public List<String> getDockerHub() {
-        return dockerHub;
+    public List<String> getDockerhub() {
+        return dockerhub;
     }
 
-    public void setDockerHub(List<String> dockerhub) {
-        this.dockerHub = dockerhub;
+    public void setDockerhub(List<String> dockerhub) {
+        this.dockerhub = dockerhub;
     }
 }
