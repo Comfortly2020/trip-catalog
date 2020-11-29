@@ -30,9 +30,10 @@ public class TripDataResource {
     @GET
     public Response getTripData(@HeaderParam("UserId") String userId) {
 
-        if (userId == null) {
-            return Response.status(Response.Status.BAD_REQUEST.getStatusCode(), "Missing UserId header").build();
-        }
+        // TODO odkomentiraj po Mejniku 1
+//        if (userId == null) {
+//            return Response.status(Response.Status.BAD_REQUEST.getStatusCode(), "Missing UserId header").build();
+//        }
         List<TripData> tripData = tripDataBean.getTripDataByUser(userId);
 
         return Response.status(Response.Status.OK).entity(tripData).build();

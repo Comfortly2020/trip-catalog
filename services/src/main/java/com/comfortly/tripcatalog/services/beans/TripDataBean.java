@@ -47,8 +47,12 @@ public class TripDataBean {
 
     public List<TripData> getTripDataByUser(String userId) {
 
-        TypedQuery<TripDataEntity> query = emTrip.createQuery("SELECT t FROM TripDataEntity t WHERE t.userId = :user", TripDataEntity.class);
-        query.setParameter("user", userId);
+        // TODO odkomentiraj po Mejniku 1
+//        TypedQuery<TripDataEntity> query = emTrip.createQuery("SELECT t FROM TripDataEntity t WHERE t.userId = :user", TripDataEntity.class);
+//        query.setParameter("user", userId);
+
+        // TODO ostrani po Mejniku 1
+        TypedQuery<TripDataEntity> query = emTrip.createQuery("SELECT t FROM TripDataEntity t", TripDataEntity.class);
 
         return query.getResultList().stream()
                 .map(TripDataConverter::toDto).collect(Collectors.toList());
