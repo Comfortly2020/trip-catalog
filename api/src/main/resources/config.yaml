@@ -13,6 +13,15 @@ kumuluzee:
       username: dbuser
       password: postgres
       max-pool-size: 20
+  health:
+    checks:
+      data-source-health-check:
+        type: liveness
+        jndi-name: jdbc/TripDataDS
+    metrics:
+      web-instrumentation:
+        - name: trip-endpoint
+          url-pattern: /v1/trips/
 rest-properties:
   config:
-    maintenance-mode: false
+    broken: false
