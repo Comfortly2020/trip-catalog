@@ -1,5 +1,8 @@
 package com.comfortly.tripcatalog.api.v1.resources;
 
+import com.comfortly.tripcatalog.lib.TripData;
+import com.comfortly.tripcatalog.services.beans.TripDataBean;
+
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -9,10 +12,6 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.List;
 import java.util.logging.Logger;
-
-import com.comfortly.tripcatalog.lib.TripData;
-import com.comfortly.tripcatalog.services.beans.TripDataBean;
-import org.eclipse.microprofile.metrics.annotation.Metered;
 
 @ApplicationScoped
 @Path("/trips")
@@ -29,7 +28,6 @@ public class TripDataResource {
     protected UriInfo uriInfo;
 
     @GET
-    @Metered(name = "trips-get-requests-for-user")
     public Response getTripData(@HeaderParam("UserId") String userId) {
 
         if (userId == null) {
@@ -54,7 +52,6 @@ public class TripDataResource {
     }
 
     @POST
-    @Metered(name = "trips-post-requests-for-user")
     public Response createTripData(@HeaderParam("UserId") String userId, TripData tripData) {
 
         if (userId == null) {

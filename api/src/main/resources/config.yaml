@@ -18,10 +18,10 @@ kumuluzee:
       data-source-health-check:
         type: liveness
         jndi-name: jdbc/TripDataDS
-    metrics:
-      web-instrumentation:
-        - name: trip-endpoint
-          url-pattern: /v1/trips/
+  metrics:
+    web-instrumentation:
+      - name: trip-endpoint
+        url-pattern: /v1/trips
 rest-properties:
   config:
     broken: false
