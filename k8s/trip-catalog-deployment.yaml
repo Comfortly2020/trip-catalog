@@ -13,13 +13,13 @@ spec:
         app: trip-catalog
     spec:
       containers:
-        - image: davidunilj/comfortly-trip-data:2020-12-03-22-20-22
+        - image: davidunilj/comfortly-trip-data:2020-12-03-22-29-12
           name: trip-catalog
           env:
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
-              value: jdbc:postgresql://balarama.db.elephantsql.com:5432/kigeftcz
+              value: jdbc:postgresql://ec2-54-234-28-165.compute-1.amazonaws.com:5432/d7491pbebv350d
             - name: KUMULUZEE_DATASOURCES0_USERNAME
-              value: kigeftcz
+              value: nfjdjdukycwyek
             - name: KUMULUZEE_DATASOURCES0_PASSWORD
               valueFrom:
                 secretKeyRef:
