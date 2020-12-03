@@ -13,7 +13,7 @@ spec:
         app: trip-catalog
     spec:
       containers:
-        - image: davidunilj/comfortly-trip-data:2020-11-19-06-08-42
+        - image: davidunilj/comfortly-trip-data:2020-11-29-17-10-25
           name: trip-catalog
           env:
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL

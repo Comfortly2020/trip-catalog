@@ -11,8 +11,8 @@ public class InfoData {
 
         data.setClani(Arrays.asList("dv6510"));
         data.setOpisProjekta("Aplikacija za shranjevanje podatkov o vožnji. Izpolnjevanju vprašalnika po opravljeni " +
-                "vožnji in nato analizi vožnje s podatki iz vprašalnika.");
-        data.setMikrostoritve(Arrays.asList("http://35.189.96.118:8080/v1/trips"));
+                "vožnji in nato analizi vožnje s podatki iz vprašalnika ter prikazu analizirane vožnje.");
+        data.setMikrostoritve(Arrays.asList("http://52.146.27.76:8080/v1/trips"));
         data.setGithub(Arrays.asList("https://github.com/Comfortly2020/trip-catalog"));
         data.setTravis(Collections.emptyList());
         data.setDockerhub(Arrays.asList("https://hub.docker.com/repository/docker/davidunilj/comfortly-trip-data"));
