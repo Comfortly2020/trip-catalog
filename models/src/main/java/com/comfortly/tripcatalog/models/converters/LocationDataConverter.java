@@ -1,9 +1,7 @@
 package com.comfortly.tripcatalog.models.converters;
 
 import com.comfortly.tripcatalog.lib.LocationData;
-import com.comfortly.tripcatalog.lib.TripData;
 import com.comfortly.tripcatalog.models.entities.LocationDataEntity;
-import com.comfortly.tripcatalog.models.entities.TripDataEntity;
 
 public class LocationDataConverter {
 
@@ -19,7 +17,6 @@ public class LocationDataConverter {
         dto.setTimestamp(entity.getTimestamp());
 
         return dto;
-
     }
 
     public static LocationDataEntity toEntity(LocationData dto) {
@@ -34,7 +31,6 @@ public class LocationDataConverter {
         entity.setTimestamp(dto.getTimestamp());
 
         return entity;
-
     }
 
 }

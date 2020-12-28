@@ -1,11 +1,13 @@
 package com.comfortly.tripcatalog.api.v1.resources;
 
 import com.comfortly.tripcatalog.config.RestProperties;
-import com.comfortly.tripcatalog.lib.info.InfoData;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.ws.rs.*;
+import javax.ws.rs.Consumes;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -25,15 +27,15 @@ public class DemoDataResource {
 
     @Inject
     private RestProperties restProperties;
-
-    @GET
-    @Path("info")
-    public Response getInfoData() {
-
-        InfoData data = InfoData.getInfoData();
-
-        return Response.status(Response.Status.OK).entity(data).build();
-    }
+//
+//    @GET
+//    @Path("info")
+//    public Response getInfoData() {
+//
+//        InfoData data = InfoData.getInfoData();
+//
+//        return Response.status(Response.Status.OK).entity(data).build();
+//    }
 
     @POST
     @Path("break")

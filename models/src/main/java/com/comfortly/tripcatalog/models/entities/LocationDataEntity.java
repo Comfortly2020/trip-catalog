@@ -11,10 +11,6 @@ public class LocationDataEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "trip_id")
-//    private TripDataEntity trip;
-
     @Column(name = "location_lat")
     private Double locationLat;
 

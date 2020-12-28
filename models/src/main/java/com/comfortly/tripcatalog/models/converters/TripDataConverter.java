@@ -21,7 +21,6 @@ public class TripDataConverter {
         dto.setLocations(entity.getLocations().stream().map(LocationDataConverter::toDto).collect(Collectors.toList()));
 
         return dto;
-
     }
 
     public static TripDataEntity toEntity(TripData dto) {
@@ -37,7 +36,6 @@ public class TripDataConverter {
         entity.setLocations(dto.getLocations().stream().map(LocationDataConverter::toEntity).collect(Collectors.toList()));
 
         return entity;
-
     }
 
 }

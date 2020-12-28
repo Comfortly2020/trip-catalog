@@ -30,10 +30,9 @@ public class TripDataResource {
     @GET
     public Response getTripData(@HeaderParam("UserId") String userId) {
 
-        // TODO odkomentiraj po Mejniku 1
-//        if (userId == null) {
-//            return Response.status(Response.Status.BAD_REQUEST.getStatusCode(), "Missing UserId header").build();
-//        }
+        if (userId == null) {
+            return Response.status(Response.Status.BAD_REQUEST.getStatusCode(), "Missing UserId header").build();
+        }
         List<TripData> tripData = tripDataBean.getTripDataByUser(userId);
 
         return Response.status(Response.Status.OK).entity(tripData).build();
@@ -71,31 +70,16 @@ public class TripDataResource {
 
     }
 
-    @PUT
-    @Path("{tripDataId}")
-    public Response putTripData(@PathParam("tripDataId") Integer tripDataId,
-                                TripData tripData) {
-
-        tripData = tripDataBean.putTripData(tripDataId, tripData);
-
-        if (tripData == null) {
-            return Response.status(Response.Status.NOT_FOUND).build();
-        }
-
-        return Response.status(Response.Status.NOT_MODIFIED).build();
-
-    }
-
-    @DELETE
-    @Path("{tripDataId}")
-    public Response deleteTripData(@PathParam("tripDataId") Integer tripDataId) {
-
-        boolean deleted = tripDataBean.deleteTripData(tripDataId);
-
-        if (deleted) {
-            return Response.status(Response.Status.NO_CONTENT).build();
-        } else {
-            return Response.status(Response.Status.NOT_FOUND).build();
-        }
-    }
+//    @DELETE
+//    @Path("{tripDataId}")
+//    public Response deleteTripData(@PathParam("tripDataId") Integer tripDataId) {
+//
+//        boolean deleted = tripDataBean.deleteTripData(tripDataId);
+//
+//        if (deleted) {
+//            return Response.status(Response.Status.NO_CONTENT).build();
+//        } else {
+//            return Response.status(Response.Status.NOT_FOUND).build();
+//        }
+//    }
 }

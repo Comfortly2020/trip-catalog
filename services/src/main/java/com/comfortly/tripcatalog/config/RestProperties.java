@@ -1,9 +1,9 @@
 package com.comfortly.tripcatalog.config;
 
-import javax.enterprise.context.ApplicationScoped;
-
 import com.kumuluz.ee.configuration.cdi.ConfigBundle;
 import com.kumuluz.ee.configuration.cdi.ConfigValue;
+
+import javax.enterprise.context.ApplicationScoped;
 
 @ConfigBundle("rest-properties.config")
 @ApplicationScoped

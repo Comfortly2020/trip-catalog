@@ -19,8 +19,7 @@ public class BrokenHealthCheck implements HealthCheck {
     public HealthCheckResponse call() {
         if (restProperties.getBroken()) {
             return HealthCheckResponse.down(BrokenHealthCheck.class.getSimpleName());
-        }
-        else {
+        } else {
             return HealthCheckResponse.up(BrokenHealthCheck.class.getSimpleName());
         }
     }
