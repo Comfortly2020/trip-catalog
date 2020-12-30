@@ -20,10 +20,10 @@ public class TripDataEntity {
     @Column(name = "user_id")
     private String userId;
 
-    @Column(name = "startLocation_lat")
+    @Column(name = "start_location_lat")
     private Double startLocationLat;
 
-    @Column(name = "startLocation_lng")
+    @Column(name = "start_location_lng")
     private Double startLocationLng;
 
     @Column(name = "end_location_lat")
