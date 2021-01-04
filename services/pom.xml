@@ -38,10 +38,11 @@
             <groupId>com.kumuluz.ee.config</groupId>
             <artifactId>kumuluzee-config-mp</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.kumuluz.ee.config</groupId>
-            <artifactId>kumuluzee-config-consul</artifactId>
-        </dependency>
+        // TODO uncomment to allow consul
+<!--        <dependency>-->
+<!--            <groupId>com.kumuluz.ee.config</groupId>-->
+<!--            <artifactId>kumuluzee-config-consul</artifactId>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>com.kumuluz.ee.metrics</groupId>
