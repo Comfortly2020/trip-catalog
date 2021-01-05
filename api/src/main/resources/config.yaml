@@ -13,7 +13,6 @@ kumuluzee:
       username: dbuser
       password: postgres
       pool:
-        min-size: 2
         max-size: 5
   config:
     consul:
