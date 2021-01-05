@@ -13,9 +13,11 @@ spec:
         app: trip-catalog
     spec:
       containers:
-        - image: davidunilj/comfortly-trip-data:2021-01-05-02-11-24
+        - image: davidunilj/comfortly-trip-data:2021-01-05-17-44-17
           name: trip-catalog
           env:
+            - name: KUMULUZEE_CONFIG_CONSUL_AGENT
+              value: http://52.224.38.169:80
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
               value: jdbc:postgresql://ec2-3-216-181-219.compute-1.amazonaws.com:5432/d4hfbtpkj75g0k
             - name: KUMULUZEE_DATASOURCES0_USERNAME

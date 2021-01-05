@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: proxy-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/user-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /trip-catalog(/|$)(.*) #/trip-catalog/v1/trips
+            backend:
+              serviceName: trip-catalog
+              servicePort: 8080
+          - path: /analyzed-trip-catalog(/|$)(.*) #/analyzed-trip-catalog/v1/analyzed-trips/summary
+            backend:
+              serviceName: analyzed-trip-catalog
+              servicePort: 8080
+          - path: /questionnaire-catalog(/|$)(.*) #/questionnaire-catalog/v1/questionnaire & answer
+            backend:
+              serviceName: questionnaire-catalog
+              servicePort: 8080
