@@ -12,7 +12,9 @@ kumuluzee:
       connection-url: jdbc:postgresql://0.0.0.0:5432/trip-data
       username: dbuser
       password: postgres
-      max-pool-size: 2
+      pool:
+        min-size: 2
+        max-size: 5
   config:
     consul:
       agent: http://52.224.38.169:80
