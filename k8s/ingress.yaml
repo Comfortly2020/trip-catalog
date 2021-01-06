@@ -23,3 +23,7 @@ spec:
             backend:
               serviceName: questionnaire-catalog
               servicePort: 8080
+          - path: /trip-processor(/|$)(.*) #/trip-processor/v1/processor-demo
+            backend:
+              serviceName: trip-processor
+              servicePort: 8080
